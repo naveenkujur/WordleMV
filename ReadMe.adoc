@@ -1,0 +1,44 @@
+= Design considerations
+
+== Guess word (proximity to secret word) feedback
+
+.Guess word letter's presence in secret word
+[%autowidth]
+|===
+| Guess word letter status | Status
+
+| Present (correct position) | Positioned
+| Present (wrong position) | Present
+| Not Present | Outlier
+|===
+
+Note: All these letters making up the guess words need to be marked Used.
+
+== Alphabet set coverage feedback
+
+.Letters used & unused status
+[%autowidth]
+|===
+| Alphabet letter status | Status
+
+| Used & present (correct position) | Used, Positioned
+| Used & present (wrong position) | Used, Present
+| Used & Not present (in the secret word) | Used, Outlier
+| Not yet used | Unused
+|===
+
+== Game end conditions
+
+. User ends the game by pressing ESC (Console version)
+. User guesses the secret word
+. User fails to guess the secret word (max 6 tries)
+
+== Error notifications
+. Given guess word is not a valid word (as per the dictionary)
+
+== Application sub-modules
+
+. Guessed words list & secret manager
+. Valid word list source (valid words dictionary)
+. Guess word composer
+. Game user-interaction
