@@ -1,5 +1,7 @@
-﻿internal class Program {
-   private static void Main (string[] args) {
+﻿namespace WordleCon;
+
+class Program {
+   static void Main (string[] args) {
       WordleView.Run ();
    }
 }
